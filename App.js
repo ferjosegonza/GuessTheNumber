@@ -15,7 +15,7 @@ export default function App() {
     setAttempts(attempts + 1);
 
     if (numGuess === number) {
-      Alert.alert(`You guessed it in ${attempts + 1} attempts!`, 'Would you like to play again?', [
+      Alert.alert(`Adivinaste en ${attempts + 1} intentos!`, 'Querés jugar otra vez?', [
         {
           text: 'Yes',
           onPress: () => {
@@ -31,23 +31,23 @@ export default function App() {
         },
       ]);
     } else if (numGuess < number) {
-      Alert.alert('Try a higher number');
+      Alert.alert('Intentá con un número más alto');
     } else {
-      Alert.alert('Try a lower number');
+      Alert.alert('Intentá con un número más bajo');
     }
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Guess the Number</Text>
-      <Text style={styles.instructions}>Enter a number between 1 and 100:</Text>
+      <Text style={styles.title}>Adiviná el número</Text>
+      <Text style={styles.instructions}>Ingresa un número entre 1 y 100:</Text>
       <TextInput
         style={styles.input}
         keyboardType="numeric"
         value={guess}
         onChangeText={text => setGuess(text)}
       />
-      <Button title="Submit Guess" onPress={handleGuess} />
+      <Button title="¿Adiviné?" onPress={handleGuess} />
     </View>
   );
 }
